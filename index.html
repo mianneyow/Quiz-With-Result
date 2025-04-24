@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Application</title>
+    <link rel="icon" type="image/x-icon" href="img/code-slash.svg">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+
+    <div class="menu container" id="menu">
+        <h2>Choose A Topic</h2>
+        
+        <div class="container text-center">
+            <div class="row">
+              <div class="col">
+                  <div class="card" style="width: 18rem;">
+                      <img src="" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Philippine Pop Culture</h5>
+                        <h5 class="score card-title" data-topic="PPC"></h5> 
+                        <p class="card-text">...</p>
+                        <button onclick="setChosenTopic(this)" data-topic="PPC" >START QUIZ</button>
+                      </div>
+                  </div>
+                
+              </div>
+              <div class="col">
+                  <div class="card" style="width: 18rem;">
+                      <img src="" class="card-img-top" alt="...">
+                      <div class="card-body">
+                          <h5 class="card-title">Are You A True Pinoy</h5>
+                          <h5 class="score card-title" data-topic="AYATP"></h5> 
+                          <p class="card-text">...</p>
+                          <button onclick="setChosenTopic(this)" data-topic="AYATP" >START QUIZ</button>
+                      </div>
+                  </div>
+                
+              </div>
+              <div class="col">
+                  <div class="card" style="width: 18rem;">
+                      <img src="" class="card-img-top" alt="...">
+                      <div class="card-body">
+                          <h5 class="card-title text-nowrap">Philippine Mythical Creatures</h5>
+                          <h5 class="score card-title" data-topic="PMC"></h5> 
+                          <p class="card-text">...</p>
+                          <button onclick="setChosenTopic(this)" data-topic="PMC" >START QUIZ</button>
+                      </div>
+                  </div>
+                
+              </div>
+              <div class="col">
+                  <div class="card" style="width: 18rem;">
+                      <img src="" class="card-img-top" alt="...">
+                      <div class="card-body">
+                          <h5 class="card-title">Karunungang Bayan</h5>
+                          <h5 class="score card-title" data-topic="KB"></h5> 
+                          <p class="card-text">...</p>
+                        <button onclick="setChosenTopic(this)" data-topic="KB" >START QUIZ</button>
+                      </div>
+                  </div>
+                
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="quiz container" id="quiz" style="display: none;">
+        <h2 id="question-number">Question #</h2>
+        <p id="question-text">...</p>
+        <img id="question-img-reference" class="img-fluid" src="" alt="">
+        <button class="choices" id="choice-1" value="A"></button>
+        <button class="choices" id="choice-2" value="B"></button>
+        <button class="choices" id="choice-3" value="C"></button>
+        <button class="choices" id="choice-4" value="D"></button>
+        <hr>
+        <button id="back-button" onclick="prevQuestion()">Back</button>
+        <button id="next-button" onclick="checkAnswer()">Next</button>
+    </div>
+
+    <!-- RESULT SECTION -->
+    <div class="result" id="result" style="display: none;">
+        <!-- Top Border for Result Feedback-->
+        <div class="result-border-top"></div>
+        <!-- Decorative Motifs -->
+        <div class="left-motif"></div> 
+        <div class="right-motif"></div> 
+  
+        <!-- Results Feedback -->
+        <div id="result-feedback-page">
+            <h3 id="final-score" class="scored-box"></h3>
+            <div id="result-feedback"></div>
+            <button id="return-menu" class="result-btn">HOME</button>
+            <button id="restart" class="result-btn">PLAY AGAIN</button>
+            <button id="view-results" class="result-btn">RESULTS</button>
+        </div>
+        
+        <!--Borders for Summary-->
+        <div class="summary-border-top" style="display: none;"></div>
+        <div class="summary-border-bottom" style="display: none;"></div>
+
+        <!-- Summary of Answers-->
+        <div id="result-summary-page" class="summary-container" style="display: none;">
+            
+            <!-- Starburst-->
+            <div class="summary-wrapper">
+                <img src="./starburst.png" alt="Answers" class="starburst" />
+                <!--Summary Box-->
+                <div class="summary-box">
+                    <div class="summary-scroll-content">
+                        <div id="correct-answers"></div>
+                    </div>
+                </div>
+            </div>
+  
+        <!--Buttons-->
+        <div class="summary-buttons">
+            <button class="result-btn" id="back-to-feedback">BACK</button>
+            <button class="result-btn" id="restart-summary">PLAY AGAIN</button>
+            <button class="result-btn" id="return-menu-summary">HOME</button>
+        </div>
+      
+    </div>
+  
+    <!--Bottom Border for Result-->
+    <div class="result-border-bottom"></div>
+  </div>
+  
+
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+
+
+</html>
